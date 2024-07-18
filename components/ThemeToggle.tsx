@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const ThemeToggle: React.FC = () => {
   const [theme, setTheme] = useState("light");
 
+  //set dark/light mode remember user preference
   useEffect(() => {
     if (
       localStorage.theme === "dark" ||
@@ -34,6 +35,7 @@ const ThemeToggle: React.FC = () => {
   };
 
   return (
+    //theme toggle
     <div className="flex items-center space-x-2">
       <FontAwesomeIcon
         icon={faSun}
