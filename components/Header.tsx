@@ -56,6 +56,14 @@ const Header: React.FC = () => {
           </li>
           <li>
             <Link
+              href="/apps"
+              className="text-black dark:text-customDarkText dark:hover:text-gray-300 hover:text-gray-300"
+            >
+              Apps
+            </Link>
+          </li>
+          <li>
+            <Link
               href="/contact"
               className="text-black dark:text-customDarkText dark:hover:text-gray-300 hover:text-gray-300"
             >
