@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Page() {
   return (
     <section className="container mx-auto mt-20 p-4 dark:text-white">
@@ -14,9 +16,11 @@ export default function Page() {
           I have developed two applications using React Native that are
           available for download{' '}
         </p>
-        <button className="bg-customDarkText text-white font-bold py-2 px-4 rounded shadow-lg hover:bg-purple-300 focus:outline-none focus:shadow-outline mt-4">
-          Learn More
-        </button>
+        <Link href="/apps">
+          <button className="bg-customDarkText text-white font-bold py-2 px-4 rounded shadow-lg hover:bg-purple-300 focus:outline-none focus:shadow-outline mt-4">
+            Learn More
+          </button>
+        </Link>
       </section>
     </section>
   );

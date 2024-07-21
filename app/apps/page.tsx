@@ -54,7 +54,18 @@ const Apps: React.FC = () => {
           <p className="dark:text-white text-2xl">
             PokerStatistics - Available for free on iOS and Android
           </p>
-          <p className="dark:text-white"></p>
+          <p className="dark:text-white">
+            A bankroll management and session statistics tracking app for poker
+            players. Developed using React Native:
+            <br />• Utilized various libraries including redux toolkit, redux
+            persist, react navigation/stack, gesture handler, uuid, swipe list
+            view, chart kit, and device info
+            <br />• Ensured app responsiveness by implementing scaling for
+            padding, margins, and text size to accommodate devices of different
+            sizes
+            <br />• Successfully deployed the app to the App Store and Play
+            Store using Fastlane
+          </p>
         </div>
       </div>
     </>
