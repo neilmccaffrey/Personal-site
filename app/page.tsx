@@ -17,7 +17,7 @@ export default function Page() {
           available for download{' '}
         </p>
         <Link href="/apps">
-          <button className="bg-customDarkText text-white font-bold py-2 px-4 rounded shadow-lg hover:bg-purple-300 focus:outline-none focus:shadow-outline mt-4">
+          <button className="bg-customDarkText text-white font-bold py-2 px-4 rounded shadow-lg hover:bg-purple-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-customDarkText mt-4">
             Learn More
           </button>
         </Link>
