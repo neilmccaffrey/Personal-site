@@ -10,6 +10,7 @@ const ContactForm = () => {
     message: '',
   });
 
+  // set formData value based on id of input box.
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {

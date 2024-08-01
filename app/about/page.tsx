@@ -4,6 +4,7 @@ const About: React.FC = () => {
   return (
     <>
       <h1 className="text-6xl dark:text-white text-center mb-4">Skills</h1>
+      {/* grid for uniformity */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
         <div className="w-full max-w-md p-2 border border-gray-300 rounded-lg shadow-md ">
           <p className="dark:text-white text-4xl">Languages</p>
