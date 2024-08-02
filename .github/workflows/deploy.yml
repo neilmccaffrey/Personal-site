@@ -31,8 +31,16 @@ jobs:
           EC2_USER: ${{ secrets.EC2_USER }}
         run: |
           mkdir -p ~/.ssh
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
+          echo "Host configuration:"
+          cat ~/.ssh/config
+          echo "Trying to connect to $EC2_USER@$EC2_HOST"
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USER@$EC2_HOST "echo 'Connected to EC2 instance'"
+          if [ $? -ne 0 ]; then
+            echo "SSH connection failed"
+            exit 255
+          fi
           ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USER@$EC2_HOST "rm -rf /var/www/html/*"
           scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa -r ./* $EC2_USER@$EC2_HOST:/var/www/html
           ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USER@$EC2_HOST "cd /var/www/html && npm install && npm run build && pm2 restart all || pm2 start npm --name 'app' -- start"
