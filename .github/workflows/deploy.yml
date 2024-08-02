@@ -30,6 +30,9 @@ jobs:
           EC2_HOST: ${{ secrets.EC2_HOST }}
           EC2_USER: ${{ secrets.EC2_USER }}
         run: |
-          ssh -o StrictHostKeyChecking=no -i $SSH_PRIVATE_KEY $EC2_USER@$EC2_HOST "rm -rf /var/www/your-app-directory/*"
-          scp -o StrictHostKeyChecking=no -i $SSH_PRIVATE_KEY -r ./* $EC2_USER@$EC2_HOST:/var/www/your-app-directory
-          ssh -o StrictHostKeyChecking=no -i $SSH_PRIVATE_KEY $EC2_USER@$EC2_HOST "cd /var/www/your-app-directory && npm install && npm run start"
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USER@$EC2_HOST "rm -rf /var/www/html/*"
+          scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa -r ./* $EC2_USER@$EC2_HOST:/var/www/html
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USER@$EC2_HOST "cd /var/www/html && npm install && npm run build && pm2 restart all || pm2 start npm --name 'app' -- start"
