@@ -30,17 +30,19 @@ jobs:
           EC2_HOST: ${{ secrets.EC2_HOST }}
           EC2_USER: ${{ secrets.EC2_USER }}
         run: |
+          echo "Setting up SSH"
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          echo "Host configuration:"
-          cat ~/.ssh/config
-          echo "Trying to connect to $EC2_USER@$EC2_HOST"
-          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USER@$EC2_HOST "echo 'Connected to EC2 instance'"
+          echo "Testing SSH connection to $EC2_USER@$EC2_HOST"
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USER@$EC2_HOST "echo 'SSH connection successful'"
           if [ $? -ne 0 ]; then
             echo "SSH connection failed"
-            exit 255
+            exit 1
           fi
-          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USER@$EC2_HOST "rm -rf /var/www/html/*"
+          echo "Removing old files from /var/www/html"
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USER@$EC2_HOST "sudo rm -rf /var/www/html/*"
+          echo "Copying new files to /var/www/html"
           scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa -r ./* $EC2_USER@$EC2_HOST:/var/www/html
+          echo "Installing dependencies and starting application"
           ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USER@$EC2_HOST "cd /var/www/html && npm install && npm run build && pm2 restart all || pm2 start npm --name 'app' -- start"
