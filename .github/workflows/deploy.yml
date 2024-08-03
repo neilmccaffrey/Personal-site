@@ -51,12 +51,12 @@ jobs:
 
            echo "Setting up environment variables"
             ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USER@$EC2_HOST "
-             echo 'SMTP_HOST=smtp.gmail.com' >> /var/www/html/.env &&
-             echo 'SMTP_PORT=587' >> /var/www/html/.env &&
-             echo 'SMTP_SECURE=false' >> /var/www/html/.env &&
-             echo 'SMTP_USER=neil.mccaffrey83@gmail.com' >> /var/www/html/.env &&
-             echo 'SMTP_PASS=${{ secrets.SMTP_PASS }}' >> /var/www/html/.env &&
-             echo 'RECEIVER_EMAIL=neil.mccaffrey83@gmail.com' >> /var/www/html/.env
+             sudo bash -c 'echo SMTP_HOST=smtp.gmail.com >> /var/www/html/.env' &&
+             sudo bash -c 'echo SMTP_PORT=587 >> /var/www/html/.env' &&
+             sudo bash -c 'echo SMTP_SECURE=false >> /var/www/html/.env' &&
+             sudo bash -c 'echo SMTP_USER=neil.mccaffrey83@gmail.com >> /var/www/html/.env' &&
+             sudo bash -c 'echo SMTP_PASS=${{ secrets.SMTP_PASS }} >> /var/www/html/.env' &&
+             sudo bash -c 'echo RECEIVER_EMAIL=neil.mccaffrey83@gmail.com >> /var/www/html/.env'
            "
 
             echo "Installing dependencies and starting application"
