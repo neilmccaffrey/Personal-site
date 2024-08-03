@@ -45,5 +45,11 @@ jobs:
           echo "Copying new files to /var/www/html"
           scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa -r ./* $EC2_USER@$EC2_HOST:/var/www/html
           echo "Installing dependencies and starting application"
-          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USER@$EC2_HOST "cd /var/www/html && npm install && npm run build"
-          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USER@$EC2_HOST "npm install -g pm2 && pm2 restart all || pm2 start npm --name 'app' -- start"
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USER@$EC2_HOST "
+            cd /var/www/html && 
+            sudo rm -rf node_modules package-lock.json &&
+            npm install &&
+            npm run build &&
+            sudo npm install -g pm2 &&
+            pm2 restart all || pm2 start npm --name 'app' -- start
+          "
