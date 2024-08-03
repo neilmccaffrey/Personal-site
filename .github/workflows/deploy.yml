@@ -36,35 +36,35 @@ jobs:
           echo "$SSH_PRIVATE_KEY_BASE64" | base64 -d > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
 
-           echo "Testing SSH connection to $EC2_USER@$EC2_HOST"
+          echo "Testing SSH connection to $EC2_USER@$EC2_HOST"
           ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USER@$EC2_HOST "echo 'SSH connection successful'"
-           if [ $? -ne 0 ]; then
-           echo "SSH connection failed"
-          exit 1
+          if [ $? -ne 0 ]; then
+            echo "SSH connection failed"
+            exit 1
           fi
 
-           echo "Removing old files from /var/www/html"
-           ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USER@$EC2_HOST "sudo rm -rf /var/www/html/*"
+          echo "Removing old files from /var/www/html"
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USER@$EC2_HOST "sudo rm -rf /var/www/html/*"
 
-           echo "Copying new files to /var/www/html"
-           scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa -r ./* $EC2_USER@$EC2_HOST:/var/www/html
+          echo "Copying new files to /var/www/html"
+          scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa -r ./* $EC2_USER@$EC2_HOST:/var/www/html
 
-           echo "Setting up environment variables"
-            ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USER@$EC2_HOST "
-             sudo bash -c 'echo SMTP_HOST=smtp.gmail.com >> /var/www/html/.env' &&
-             sudo bash -c 'echo SMTP_PORT=587 >> /var/www/html/.env' &&
-             sudo bash -c 'echo SMTP_SECURE=false >> /var/www/html/.env' &&
-             sudo bash -c 'echo SMTP_USER=neil.mccaffrey83@gmail.com >> /var/www/html/.env' &&
-             sudo bash -c 'echo SMTP_PASS=${{ secrets.SMTP_PASS }} >> /var/www/html/.env' &&
-             sudo bash -c 'echo RECEIVER_EMAIL=neil.mccaffrey83@gmail.com >> /var/www/html/.env'
-           "
+          echo "Setting up environment variables"
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USER@$EC2_HOST "
+            echo SMTP_HOST=smtp.gmail.com | sudo tee -a /var/www/html/.env &&
+            echo SMTP_PORT=587 | sudo tee -a /var/www/html/.env &&
+            echo SMTP_SECURE=false | sudo tee -a /var/www/html/.env &&
+            echo SMTP_USER=neil.mccaffrey83@gmail.com | sudo tee -a /var/www/html/.env &&
+            echo SMTP_PASS=${SMTP_PASS} | sudo tee -a /var/www/html/.env &&
+            echo RECEIVER_EMAIL=neil.mccaffrey83@gmail.com | sudo tee -a /var/www/html/.env
+          "
 
-            echo "Installing dependencies and starting application"
-            ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USER@$EC2_HOST "
-             cd /var/www/html && 
-             sudo rm -rf node_modules package-lock.json &&
-             npm install &&
-             npm run build &&
-             sudo npm install -g pm2 &&
-             pm2 restart all || pm2 start npm --name 'app' -- start
-            "
+          echo "Installing dependencies and starting application"
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USER@$EC2_HOST "
+            cd /var/www/html && 
+            sudo rm -rf node_modules package-lock.json &&
+            npm install &&
+            npm run build &&
+            sudo npm install -g pm2 &&
+            pm2 restart all || pm2 start npm --name 'app' -- start
+          "
