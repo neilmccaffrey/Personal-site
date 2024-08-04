@@ -53,7 +53,24 @@ jobs:
           scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa -r ./* $EC2_USER@$EC2_HOST:/tmp/html
 
           echo "Moving files to /var/www/html"
-          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USER@$EC2_HOST "sudo mv /tmp/html/* /var/www/html/"
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USER@$EC2_HOST "sudo mv /tmp/html/* /var/www/html"
 
           echo "Setting up environment variables"
-          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USER@$​⬤
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USER@$EC2_HOST "
+            echo SMTP_HOST=smtp.gmail.com | sudo tee -a /var/www/html/.env &&
+            echo SMTP_PORT=587 | sudo tee -a /var/www/html/.env &&
+            echo SMTP_SECURE=false | sudo tee -a /var/www/html/.env &&
+            echo SMTP_USER=neil.mccaffrey83@gmail.com | sudo tee -a /var/www/html/.env &&
+            echo SMTP_PASS=${SMTP_PASS} | sudo tee -a /var/www/html/.env &&
+            echo RECEIVER_EMAIL=neil.mccaffrey83@gmail.com | sudo tee -a /var/www/html/.env
+          "
+
+          echo "Installing dependencies and starting application"
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USER@$EC2_HOST "
+            cd /var/www/html && 
+            sudo rm -rf node_modules package-lock.json &&
+            npm install &&
+            npm run build &&
+            sudo npm install -g pm2 &&
+            pm2 restart all || pm2 start npm --name 'app' -- start
+          "
