@@ -1,6 +1,12 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
+// Log environment variables for debugging
+console.log('SMTP_HOST:', process.env.SMTP_HOST);
+console.log('SMTP_PORT:', process.env.SMTP_PORT);
+console.log('SMTP_USER:', process.env.SMTP_USER);
+console.log('RECEIVER_EMAIL:', process.env.RECEIVER_EMAIL);
+
 // Configure your SMTP transporter using environment variables
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
@@ -14,6 +20,9 @@ const transporter = nodemailer.createTransport({
 
 export async function POST(request: Request) {
   const { name, email, subject, message } = await request.json();
+
+  // Log the request payload for debugging
+  console.log('Request Payload:', { name, email, subject, message });
 
   // Email options
   const mailOptions = {
