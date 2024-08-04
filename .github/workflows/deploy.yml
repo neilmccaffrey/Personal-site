@@ -46,8 +46,14 @@ jobs:
           echo "Removing old files from /var/www/html"
           ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USER@$EC2_HOST "sudo rm -rf /var/www/html/*"
 
-          echo "Copying new files to /var/www/html"
-          scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa -r ./* $EC2_USER@$EC2_HOST:/var/www/html
+          echo "Creating temporary directory"
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USER@$EC2_HOST "mkdir -p /tmp/html"
+
+          echo "Copying new files to /tmp/html"
+          scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa -r ./* $EC2_USER@$EC2_HOST:/tmp/html
+
+          echo "Moving files to /var/www/html"
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USER@$EC2_HOST "sudo mv /tmp/html/* /var/www/html"
 
           echo "Setting up environment variables"
           ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USER@$EC2_HOST "
