@@ -57,6 +57,7 @@ jobs:
 
           echo "Setting up environment variables"
           ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USER@$EC2_HOST "
+            sudo rm -f /var/www/html/.env &&
             echo SMTP_HOST=smtp.gmail.com | sudo tee -a /var/www/html/.env &&
             echo SMTP_PORT=587 | sudo tee -a /var/www/html/.env &&
             echo SMTP_SECURE=false | sudo tee -a /var/www/html/.env &&
