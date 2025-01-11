@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-200 dark:bg-gray-800 p-2 mt-auto flex justify-center items-center">
+    <footer className="w-full fixed bottom-0 bg-gray-200 dark:bg-gray-800 p-2 mt-auto flex justify-center items-center">
       <span className="dark:text-customDarkText">
         Site written using Next.js and TypeScript |{' '}
       </span>

@@ -8,7 +8,7 @@ import ThemeToggle from './ThemeToggle';
 
 const Header: React.FC = () => {
   return (
-    <header className="bg-gray-200 dark:bg-gray-800 p-4">
+    <header className="w-full fixed top-0 bg-gray-200 dark:bg-gray-800 p-4">
       <nav className="container mx-auto flex justify-between items-center">
         <ThemeToggle />
         <ul className="flex space-x-4">
