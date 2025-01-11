@@ -20,7 +20,7 @@ const Header: React.FC = () => {
             >
               <FontAwesomeIcon
                 icon={faGithub}
-                className="text-4xl dark:text-white"
+                className="text-4xl dark:text-white transition-transform duration-200 hover:scale-125"
               />
             </a>
           </li>
@@ -32,7 +32,7 @@ const Header: React.FC = () => {
             >
               <FontAwesomeIcon
                 icon={faLinkedin}
-                className="text-4xl text-linkedIn dark:text-white"
+                className="text-4xl text-linkedIn dark:text-white transition-transform duration-200 hover:scale-125"
               />
             </a>
           </li>
@@ -41,7 +41,7 @@ const Header: React.FC = () => {
           <li>
             <Link
               href="/"
-              className="text-black dark:text-customDarkText dark:hover:text-gray-300 hover:text-gray-300"
+              className="inline-block text-black dark:text-customDarkText transition-transform duration-200 dark:hover:text-gray-300 hover:text-gray-300 hover:scale-125"
             >
               Home
             </Link>
@@ -49,7 +49,7 @@ const Header: React.FC = () => {
           <li>
             <Link
               href="/about"
-              className="text-black dark:text-customDarkText dark:hover:text-gray-300 hover:text-gray-300"
+              className="inline-block text-black dark:text-customDarkText transition-transform duration-200 dark:hover:text-gray-300 hover:text-gray-300 hover:scale-125"
             >
               About
             </Link>
@@ -57,7 +57,7 @@ const Header: React.FC = () => {
           <li>
             <Link
               href="/apps"
-              className="text-black dark:text-customDarkText dark:hover:text-gray-300 hover:text-gray-300"
+              className="inline-block text-black dark:text-customDarkText transition-transform duration-200 dark:hover:text-gray-300 hover:text-gray-300 hover:scale-125"
             >
               Apps
             </Link>
@@ -65,7 +65,7 @@ const Header: React.FC = () => {
           <li>
             <Link
               href="/contact"
-              className="text-black dark:text-customDarkText dark:hover:text-gray-300 hover:text-gray-300"
+              className="inline-block text-black dark:text-customDarkText transition-transform duration-200 dark:hover:text-gray-300 hover:text-gray-300 hover:scale-125"
             >
               Contact
             </Link>
