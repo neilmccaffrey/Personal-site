@@ -22,7 +22,7 @@ export default function RootLayout({
         )}
         <link rel="icon" sizes="32x32" href="/images/favicon-32x32.png" />
       </head>
-      <body className="light:bg-white dark:bg-customDark flex flex-col min-h-screen">
+      <body className="bg-gray-100 dark:bg-customDark flex flex-col min-h-screen">
         <Header />
         <main className="container flex-grow mx-auto p-4">{children}</main>
         <Footer />

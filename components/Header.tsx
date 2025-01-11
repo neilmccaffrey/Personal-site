@@ -8,7 +8,7 @@ import ThemeToggle from './ThemeToggle';
 
 const Header: React.FC = () => {
   return (
-    <header className="light:bg-white dark:bg-gray-800 p-4">
+    <header className="bg-gray-200 dark:bg-gray-800 p-4">
       <nav className="container mx-auto flex justify-between items-center">
         <ThemeToggle />
         <ul className="flex space-x-4">
@@ -41,7 +41,7 @@ const Header: React.FC = () => {
           <li>
             <Link
               href="/"
-              className="inline-block text-black dark:text-customDarkText transition-transform duration-200 dark:hover:text-gray-300 hover:text-gray-300 hover:scale-125"
+              className="inline-block text-black dark:text-customDarkText transition-transform duration-200 dark:hover:text-gray-300 hover:text-gray-900 hover:scale-125"
             >
               Home
             </Link>
@@ -49,7 +49,7 @@ const Header: React.FC = () => {
           <li>
             <Link
               href="/about"
-              className="inline-block text-black dark:text-customDarkText transition-transform duration-200 dark:hover:text-gray-300 hover:text-gray-300 hover:scale-125"
+              className="inline-block text-black dark:text-customDarkText transition-transform duration-200 dark:hover:text-gray-300 hover:text-gray-900 hover:scale-125"
             >
               About
             </Link>
@@ -57,7 +57,7 @@ const Header: React.FC = () => {
           <li>
             <Link
               href="/apps"
-              className="inline-block text-black dark:text-customDarkText transition-transform duration-200 dark:hover:text-gray-300 hover:text-gray-300 hover:scale-125"
+              className="inline-block text-black dark:text-customDarkText transition-transform duration-200 dark:hover:text-gray-300 hover:text-gray-900 hover:scale-125"
             >
               Apps
             </Link>
@@ -65,7 +65,7 @@ const Header: React.FC = () => {
           <li>
             <Link
               href="/contact"
-              className="inline-block text-black dark:text-customDarkText transition-transform duration-200 dark:hover:text-gray-300 hover:text-gray-300 hover:scale-125"
+              className="inline-block text-black dark:text-customDarkText transition-transform duration-200 dark:hover:text-gray-300 hover:text-gray-900 hover:scale-125"
             >
               Contact
             </Link>
