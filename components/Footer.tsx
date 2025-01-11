@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
         href="https://github.com/neilmccaffrey/Personal-site"
         target="_blank"
         rel="noopener noreferrer"
-        className="dark:text-blue-400 text-blue-400"
+        className="dark:text-blue-400 text-blue-400 transition-transform duration-200 hover:scale-110"
       >
         &nbsp;View code
       </a>
