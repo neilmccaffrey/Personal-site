@@ -14,7 +14,7 @@ const About: React.FC = () => {
     visible: { opacity: 1, y: 0 }, // Move into view
   };
   return (
-    <>
+    <section className="flex flex-col justify-center items-center min-h-screen p-4">
       <h1 className="text-6xl dark:text-white text-center mb-4">Skills</h1>
       {/* grid for uniformity */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
@@ -119,7 +119,7 @@ const About: React.FC = () => {
           </p>
         </motion.div>
       </div>
-    </>
+    </section>
   );
 };
 

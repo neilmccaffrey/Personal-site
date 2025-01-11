@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Page() {
   return (
-    <section className="container mx-auto mt-20 p-4 dark:text-white">
+    <section className="container mx-auto p-4 dark:text-white min-h-screen flex flex-col justify-center">
       <h1 className="text-6xl">Hi, I’m Neil McCaffrey</h1>
       <p className="mt-4 text-2xl  dark:text-white">
         I am a software developer who enjoys creating fullstack mobile and web
@@ -14,7 +14,7 @@ export default function Page() {
       <section className="container mx-auto p-4 flex flex-col items-center">
         <p className="mt-8 text-xl  dark:text-white">
           I have developed two applications using React Native that are
-          available for download{' '}
+          available for download
         </p>
         <Link href="/apps">
           <button

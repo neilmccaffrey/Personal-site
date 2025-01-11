@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Apps: React.FC = () => {
   return (
-    <>
+    <div className="flex flex-col items-center justify-center min-h-screen p-4">
       <div className="border-b-2 border-gray-300 p-10 flex space-x-4">
         <div className="w-24 h-24 rounded-lg shadow-lg dark:border-2 dark:border-gray-300 dark:bg-white overflow-hidden flex-shrink-0">
           <Image
@@ -68,7 +68,7 @@ const Apps: React.FC = () => {
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
