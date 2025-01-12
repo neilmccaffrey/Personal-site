@@ -1,4 +1,4 @@
-'use client'; //framer-motion on works on client side
+'use client'; //framer-motion only works on client side
 
 import React from 'react';
 import { motion } from 'framer-motion';
