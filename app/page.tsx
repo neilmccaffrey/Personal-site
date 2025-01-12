@@ -2,9 +2,21 @@
 import Link from 'next/link';
 
 export default function Page() {
+  const text = 'Hi, I’m Neil McCaffrey';
+
   return (
     <section className="container mx-auto p-4 dark:text-white min-h-screen flex flex-col justify-center pt-16">
-      <h1 className="text-3xl md:text-6xl">Hi, I’m Neil McCaffrey</h1>
+      <h1 className="text-3xl md:text-6xl">
+        {text.split('').map((char, index) => (
+          <span
+            key={index}
+            className="inline-block animate-wave"
+            style={{ animationDelay: `${index * 0.1}s` }}
+          >
+            {char === ' ' ? '\u00A0' : char}
+          </span>
+        ))}
+      </h1>
       <p className="mt-4 text-2xl  dark:text-white">
         I am a software developer who enjoys creating fullstack mobile and web
         applications. I like learning new languages and tools, and I have
