@@ -4,8 +4,9 @@ import Image from 'next/image';
 const Apps: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4">
-      <div className="border-b-2 border-gray-300 p-10 flex space-x-4">
-        <div className="w-24 h-24 rounded-lg shadow-lg dark:border-2 dark:border-gray-300 dark:bg-white overflow-hidden flex-shrink-0">
+      {/* App 1 */}
+      <div className="border-b-2 border-gray-300 p-6 md:p-10 pt-16 md:pt-0 flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-4 max-w-4xl w-full">
+        <div className="w-24 h-24 md:w-32 md:h-32 rounded-lg shadow-lg dark:border-2 dark:border-gray-300 dark:bg-white overflow-hidden flex-shrink-0 mx-auto md:mx-0">
           <Image
             src={'/images/run401.png'}
             alt={''}
@@ -14,34 +15,31 @@ const Apps: React.FC = () => {
             className="object-cover w-full h-full"
           />
         </div>
-        <div className="flex-col">
-          <p className="dark:text-white text-2xl">
+        <div className="flex flex-col text-center md:text-left">
+          <p className="dark:text-white text-xl md:text-2xl font-bold">
             Run 401 - Available for free on iOS
           </p>
-          <p className="dark:text-white">
+          <p className="dark:text-white text-sm md:text-base mt-2">
             A social app designed for users in Rhode Island to create and join
             local events for various activities. Developed using React Native
             and Firebase technologies:
             <br />
-            • Firestore Database: Used to store user posts, comments, and other
-            dynamic content. Ensures that any changes made to the data are
-            instantly reflected across all devices. <br />
-            • Firebase Authentication: Manages user sessions and secures access
-            to app features. Allows users to sign up and log in using their
-            email, ensuring secure and personalized access to the app. <br />
-            • Firebase Storage: Handles profile photos and other uploads,
-            integrating with Firebase Authentication to secure file access and
-            management. <br />
-            • Firebase Functions & Messaging: Used to send users a push
-            notification 24 hours before an event they signed up for is
-            scheduled to start.
-            <br />• Cloud Vision & Perspective APIs: Used to moderate images and
-            text.
+            • Firestore Database: Stores user posts, comments, and dynamic
+            content.
+            <br />
+            • Firebase Authentication: Manages user sessions and secures access.
+            <br />
+            • Firebase Storage: Handles profile photos and uploads securely.
+            <br />
+            • Firebase Functions & Messaging: Sends push notifications.
+            <br />• Cloud Vision & Perspective APIs: Moderates images and text.
           </p>
         </div>
       </div>
-      <div className=" p-10 flex space-x-4">
-        <div className="w-24 h-24 rounded-lg shadow-lg dark:border-2 dark:border-gray-300 dark:bg-white overflow-hidden flex-shrink-0">
+
+      {/* App 2 */}
+      <div className="p-6 md:p-10 flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-4 max-w-4xl w-full">
+        <div className="w-24 h-24 md:w-32 md:h-32 rounded-lg shadow-lg dark:border-2 dark:border-gray-300 dark:bg-white overflow-hidden flex-shrink-0 mx-auto md:mx-0">
           <Image
             src={'/images/pokerStatistics.png'}
             alt={''}
@@ -50,21 +48,19 @@ const Apps: React.FC = () => {
             className="object-cover w-full h-full"
           />
         </div>
-        <div className="flex-col">
-          <p className="dark:text-white text-2xl">
+        <div className="flex flex-col text-center md:text-left">
+          <p className="dark:text-white text-xl md:text-2xl font-bold">
             PokerStatistics - Available for free on iOS and Android
           </p>
-          <p className="dark:text-white">
+          <p className="dark:text-white text-sm md:text-base mt-2">
             A bankroll management and session statistics tracking app for poker
-            players. Developed using React Native:
-            <br />• Utilized various libraries including redux toolkit, redux
-            persist, react navigation/stack, gesture handler, uuid, swipe list
-            view, chart kit, and device info
-            <br />• Ensured app responsiveness by implementing scaling for
-            padding, margins, and text size to accommodate devices of different
-            sizes
-            <br />• Successfully deployed the app to the App Store and Play
-            Store using Fastlane
+            players:
+            <br />
+            • Libraries: Redux Toolkit, Redux Persist, React Navigation, and
+            more.
+            <br />
+            • Scales for different screen sizes using responsive design.
+            <br />• Deployed on App Store and Play Store using Fastlane.
           </p>
         </div>
       </div>

@@ -1,9 +1,10 @@
+'use client';
 import Link from 'next/link';
 
 export default function Page() {
   return (
-    <section className="container mx-auto p-4 dark:text-white min-h-screen flex flex-col justify-center">
-      <h1 className="text-6xl">Hi, I’m Neil McCaffrey</h1>
+    <section className="container mx-auto p-4 dark:text-white min-h-screen flex flex-col justify-center pt-16">
+      <h1 className="text-3xl md:text-6xl">Hi, I’m Neil McCaffrey</h1>
       <p className="mt-4 text-2xl  dark:text-white">
         I am a software developer who enjoys creating fullstack mobile and web
         applications. I like learning new languages and tools, and I have
