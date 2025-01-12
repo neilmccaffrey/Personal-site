@@ -13,10 +13,21 @@ const About: React.FC = () => {
     hidden: { opacity: 0, y: 150 }, // Start off screen at the bottom
     visible: { opacity: 1, y: 0 }, // Move into view
   };
+
+  const text = 'Skills';
+
   return (
     <section className="flex flex-col justify-center items-center min-h-screen p-4">
       <h1 className="text-3xl md:text-6xl dark:text-white text-center mb-4 mt-16 md:mt-0">
-        Skills
+        {text.split('').map((char, index) => (
+          <span
+            key={index}
+            className="inline-block animate-wave"
+            style={{ animationDelay: `${index * 0.1}s` }}
+          >
+            {char === ' ' ? '\u00A0' : char}
+          </span>
+        ))}
       </h1>
       {/* grid for uniformity */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
