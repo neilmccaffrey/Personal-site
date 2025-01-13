@@ -1,3 +1,4 @@
+require('dotenv').config({ path: './.env' });
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
@@ -7,7 +8,7 @@ console.log('SMTP_PORT:', process.env.SMTP_PORT);
 console.log('SMTP_USER:', process.env.SMTP_USER);
 console.log('RECEIVER_EMAIL:', process.env.RECEIVER_EMAIL);
 
-// Configure your SMTP transporter using environment variables
+// Configure SMTP transporter using environment variables
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: parseInt(process.env.SMTP_PORT || '587', 10),
