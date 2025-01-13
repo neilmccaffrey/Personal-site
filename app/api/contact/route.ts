@@ -11,8 +11,8 @@ console.log('RECEIVER_EMAIL:', process.env.RECEIVER_EMAIL);
 // Configure SMTP transporter using environment variables
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
-  port: parseInt(process.env.SMTP_PORT || '587', 10),
-  secure: process.env.SMTP_SECURE === 'true', // true for 465, false for other ports
+  port: process.env.SMTP_PORT === '465' ? 465 : 587,
+  secure: process.env.SMTP_PORT === '465', // true for 465, false for 587
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
