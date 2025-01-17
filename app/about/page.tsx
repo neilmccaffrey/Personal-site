@@ -17,7 +17,7 @@ const About: React.FC = () => {
   const text = 'Skills';
 
   return (
-    <section className="flex flex-col justify-center items-center min-h-screen p-4">
+    <section className="flex flex-col justify-center items-center min-h-screen p-4 pb-16">
       <h1 className="text-3xl md:text-6xl dark:text-white text-center mb-4 mt-16 md:mt-0">
         {text.split('').map((char, index) => (
           <span

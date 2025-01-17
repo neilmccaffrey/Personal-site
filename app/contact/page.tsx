@@ -5,7 +5,7 @@ const Contact: React.FC = () => {
   const text = 'Contact Me';
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-4">
+    <div className="flex items-center justify-center min-h-screen p-4 pb-16">
       <main>
         <h1 className="text-xl md:text-3xl font-bold mb-2 md:mb-4 dark:text-white pt-16 md:pt-0">
           {text.split('').map((char, index) => (

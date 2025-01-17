@@ -16,7 +16,7 @@ const Apps: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4">
+    <div className="flex flex-col items-center justify-center min-h-screen p-4 pb-16">
       {/* App 1 */}
       <div className="border-b-2 border-gray-300 p-6 md:p-10 pt-16 md:pt-0 flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-4 max-w-4xl w-full">
         <motion.div
