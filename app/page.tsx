@@ -25,7 +25,7 @@ export default function Page() {
         My focus is on leveraging modern technologies to build efficient and
         user-friendly applications.
       </p>
-      <section className="container mx-auto p-4 flex flex-col items-center">
+      <section className="container mx-auto p-4 flex flex-col items-center pb-16">
         <p className="mt-8 text-xl  dark:text-white">
           I have developed and successfully deployed two applications using
           React Native, both available for download
