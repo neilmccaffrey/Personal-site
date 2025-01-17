@@ -25,7 +25,7 @@ jobs:
       # Step 3: Deploy to EC2
       - name: Deploy to EC2
         run: |
-          ssh ubuntu@your-ec2-ip << 'EOF'
+          ssh ubuntu@ec2-18-116-47-86.us-east-2.compute.amazonaws.com << 'EOF'
             cd Personal-site
             git pull origin main
             npm install
