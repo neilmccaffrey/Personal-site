@@ -58,19 +58,22 @@ const Apps: React.FC = () => {
             </Link>
           </div>
           <p className="dark:text-white text-sm md:text-base mt-2">
-            A social app designed for users in Rhode Island to create and join
-            local events for various activities. Developed using React Native
-            and Firebase technologies:
+            Full-stack web application designed to help users manage their
+            income and expenses while staying updated with top financial news:
             <br />
-            • Firestore Database: Stores user posts, comments, and dynamic
-            content.
+            • Front-end: Built with React.js, styled with Tailwind CSS for a
+            responsive, mobile-first experience, and deployed with Vercel.
             <br />
-            • Firebase Authentication: Manages user sessions and secures access.
+            • Backend: Developed using ASP.NET Core and deployed with Render.
             <br />
-            • Firebase Storage: Handles profile photos and uploads securely.
-            <br />
-            • Firebase Functions & Messaging: Sends push notifications.
-            <br />• Cloud Vision & Perspective APIs: Moderates images and text.
+            • Database: Powered by MySQL, deployed with Railway.
+            <br />• Automated News Updates: A cron job runs daily to fetch the
+            latest financial news from The Guardian API and store them in the
+            database.
+            <br />• Implemented user authentication with login/register
+            functionality, allowing users to securely save and manage their
+            financial data.
+            <br />• Utilized JSON Web Tokens to manage user sessions.
           </p>
         </motion.div>
       </div>

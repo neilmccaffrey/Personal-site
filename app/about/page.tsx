@@ -47,7 +47,7 @@ const About: React.FC = () => {
             <br />• TypeScript
             <br />• Java
             <br />• C++
-            <br />• Python
+            <br />• C#
           </p>
         </motion.div>
         <motion.div
@@ -63,6 +63,8 @@ const About: React.FC = () => {
             • React.js
             <br />• React Native
             <br />• Next.js
+            <br />• Redux
+            <br />• Framer Motion
             <br />• Bootstrap
             <br />• Tailwind CSS
           </p>
@@ -77,7 +79,9 @@ const About: React.FC = () => {
         >
           <p className="dark:text-white text-2xl md:text-4xl">Back-End</p>
           <p className="dark:text-white mt-4 text-xl md:text-2xl">
-            • Firebase
+            • ASP.NET Core
+            <br />• JWT
+            <br />• Firebase
             <br />• AWS
             <br />• REST
             <br />• Node/Express.js
@@ -97,8 +101,8 @@ const About: React.FC = () => {
             Database Technologies
           </p>
           <p className="dark:text-white mt-4 text-xl md:text-2xl">
-            • Firebase Firestore
-            <br />• SQL
+            • MySQL
+            <br />• Firebase Firestore
             <br />• NoSQL
           </p>
         </motion.div>
@@ -116,7 +120,9 @@ const About: React.FC = () => {
           <p className="dark:text-white mt-4 text-xl md:text-2xl">
             • Git
             <br />• GitHub Actions
+            <br />• Cron Jobs
             <br />• Fastlane
+            <br />• Nginx
             <br />• CI/CD
           </p>
         </motion.div>
