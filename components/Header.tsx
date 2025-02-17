@@ -72,6 +72,15 @@ const Header: React.FC = () => {
               Contact
             </Link>
           </li>
+          <li>
+            <Link
+              href="/Neil McCaffrey Resume.pdf"
+              target="_blank"
+              className="inline-block text-black dark:text-customDarkText transition-transform duration-200 dark:hover:text-gray-300 hover:text-gray-900 hover:scale-125"
+            >
+              Resume
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>

@@ -21,7 +21,7 @@ const Apps: React.FC = () => {
       {/* finance tracker */}
       <div className="border-b-2 border-gray-300 p-6 md:p-10 flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-4 max-w-4xl w-full">
         <motion.div
-          className="w-24 h-24 md:w-32 md:h-32 rounded-lg shadow-lg dark:border-2 dark:border-gray-300 dark:bg-white overflow-hidden flex-shrink-0 mx-auto md:mx-0"
+          className="w-32 h-32 rounded-lg shadow-lg dark:border-2 dark:border-gray-300 dark:bg-white overflow-hidden flex-shrink-0 mx-auto md:mx-0"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -81,7 +81,7 @@ const Apps: React.FC = () => {
       {/* App 1 */}
       <div className="border-b-2 border-gray-300 p-6 md:p-10 flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-4 max-w-4xl w-full">
         <motion.div
-          className="w-24 h-24 md:w-32 md:h-32 rounded-lg shadow-lg dark:border-2 dark:border-gray-300 dark:bg-white overflow-hidden flex-shrink-0 mx-auto md:mx-0"
+          className="w-32 h-32 rounded-lg shadow-lg dark:border-2 dark:border-gray-300 dark:bg-white overflow-hidden flex-shrink-0 mx-auto md:mx-0"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -128,7 +128,7 @@ const Apps: React.FC = () => {
       {/* App 2 */}
       <div className="p-6 md:p-10 flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-4 max-w-4xl w-full">
         <motion.div
-          className="w-24 h-24 md:w-32 md:h-32 rounded-lg shadow-lg dark:border-2 dark:border-gray-300 dark:bg-white overflow-hidden flex-shrink-0 mx-auto md:mx-0"
+          className="w-32 h-32 rounded-lg shadow-lg dark:border-2 dark:border-gray-300 dark:bg-white overflow-hidden flex-shrink-0 mx-auto md:mx-0"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
