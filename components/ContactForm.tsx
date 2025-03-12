@@ -33,15 +33,18 @@ const ContactForm = () => {
         body: JSON.stringify(formData),
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        throw new Error('Something went wrong');
+        throw new Error(data.message || 'Something went wrong');
       }
 
       alert('Message sent successfully');
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
-      console.error(error);
-      alert('Failed to send message');
+      const errorMessage =
+        error instanceof Error ? error.message : 'Failed to send message';
+      alert(errorMessage);
     }
   };
 
