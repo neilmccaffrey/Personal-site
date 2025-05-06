@@ -48,6 +48,7 @@ const About: React.FC = () => {
             <br />• Java
             <br />• C++
             <br />• C#
+            <br />• Python
           </p>
         </motion.div>
         <motion.div
@@ -67,6 +68,8 @@ const About: React.FC = () => {
             <br />• Framer Motion
             <br />• Bootstrap
             <br />• Tailwind CSS
+            <br />• Apollo Client
+            <br />• GraphQL
           </p>
         </motion.div>
         <motion.div
@@ -85,6 +88,8 @@ const About: React.FC = () => {
             <br />• AWS
             <br />• REST
             <br />• Node/Express.js
+            <br />• Apollo Server
+            <br />• GraphQL
           </p>
         </motion.div>
 
@@ -104,6 +109,7 @@ const About: React.FC = () => {
             • MySQL
             <br />• Firebase Firestore
             <br />• NoSQL
+            <br />• MongoDB
           </p>
         </motion.div>
         <motion.div
@@ -124,6 +130,7 @@ const About: React.FC = () => {
             <br />• Fastlane
             <br />• Nginx
             <br />• CI/CD
+            <br />• JIRA
           </p>
         </motion.div>
         <motion.div
